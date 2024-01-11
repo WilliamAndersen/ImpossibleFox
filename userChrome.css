@@ -36,6 +36,10 @@
 
 #alltabs-button, 
 
+#back-button,
+
+#forward-button,
+
 /* descriptions in extensions menu */
 .unified-extensions-item-message-deck,
 
@@ -108,6 +112,11 @@ findbar {
 
 /* TABS */
 
+/*Removes Left separator line*/
+
+#tabbrowser-tabs{
+  border-inline-start: none !important;
+}
 
 /* multiline tabs */
 
@@ -197,14 +206,13 @@ tab[selected]:hover {
   .tab-label-container{ opacity: 0 !important; }; 
 }
 
-
 /* show urlbar with background if it focused */
 
 #urlbar[focused] { 
   opacity: 1; 
   #urlbar-background{ opacity: 1 };
+  #urlbar-background {background-color: var(--tab-selected-bgcolor) !important;} 
 }
-
 
 /* cut urlbar on sides to show icon and close button */
 
@@ -247,9 +255,9 @@ tab[selected]:hover {
 
 /* CENTERED TABS AND BOOKMARKS */
 
-#tabbrowser-arrowscrollbox:not([overflowing]){
+/*#tabbrowser-arrowscrollbox:not([overflowing]){
  --imf-align-tmp: var(--imf-tabs-align); 
-}
+}*/
 
 #PlacesToolbarItems:not([overflowing]){
  --imf-align-tmp: var(--imf-bookmarks-align); 
@@ -310,4 +318,3 @@ scrollbar{
 /* fix sites without favicon */
 
 .tab-icon-stack { min-width: 22px };
-
